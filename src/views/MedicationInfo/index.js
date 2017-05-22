@@ -1,8 +1,15 @@
 import React, { Component } from 'react';
+import { StyledLink } from './../../styled';
 
 class MedicationInfo extends Component {
   render() {
-    return <div>MedicationInfo</div>;
+    return (
+      <div>
+        <StyledLink to="/">
+          Start again
+        </StyledLink>
+      </div>
+    );
   }
 }
 
