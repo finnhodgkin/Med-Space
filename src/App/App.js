@@ -16,7 +16,6 @@ class App extends Component {
       <Router>
         <ThemeProvider theme={theme}>
           <AppWrapper>
-            App
             <Route exact path="/" component={Welcome} />
             <Route path="/conditions" component={Conditions} />
             <Route path="/medications" component={Medications} />
