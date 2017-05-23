@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styled, { keyframes } from 'styled-components';
+import uuid from 'uuid';
 
 import medicine from './assets/medicine.png';
 import planet from './assets/planet-earth.svg';
@@ -102,12 +103,13 @@ class Medications extends Component {
           {this.props.match.params.condition}
         </StyledLink>
         {this.state.dimensions.map(dimension => (
-        <Medication
-          onClick={this.handleClick}
-          size={dimension.size}
-          top={dimension.top}
-          left={dimension.left}
-        />
+          <Medication
+            key={uuid()}
+            onClick={this.handleClick}
+            size={dimension.size}
+            top={dimension.top}
+            left={dimension.left}
+          />
         ))}
         <LandMass src={planet} />
         {this.state.showCard &&
