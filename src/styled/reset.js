@@ -26,4 +26,13 @@ injectGlobal`
   ul {
     list-style-type: none;
   }
+
+    .fade-enter {
+    opacity: 0.01;
+  }
+
+    .fade-enter.fade-enter-active {
+    opacity: 1;
+    transition: opacity 500ms ease-in;
+  }
 `;
