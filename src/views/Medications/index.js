@@ -69,6 +69,28 @@ const MedicationIcon = styled.img`
 class Medications extends Component {
   state = {
     showCard: false,
+    dimensions: [
+      {
+        size: '2.2em',
+        top: '70%',
+        left: '15%',
+      },
+      {
+        size: '1.5em',
+        top: '50%',
+        left: '55%',
+      },
+      {
+        size: '2em',
+        top: '8%',
+        left: '75%',
+      },
+      {
+        size: '1.7em',
+        top: '10%',
+        left: '20%',
+      },
+    ],
   };
   handleClick = evt => {
     this.setState({ showCard: !this.state.showCard });
@@ -79,30 +101,14 @@ class Medications extends Component {
         <StyledLink to="/medication/fluoxetine">
           {this.props.match.params.condition}
         </StyledLink>
+        {this.state.dimensions.map(dimension => (
         <Medication
           onClick={this.handleClick}
-          size={'2.2em'}
-          top={'70%'}
-          left={'15%'}
+          size={dimension.size}
+          top={dimension.top}
+          left={dimension.left}
         />
-        <Medication
-          onClick={this.handleClick}
-          size={'1.5em'}
-          top={'50%'}
-          left={'55%'}
-        />
-        <Medication
-          onClick={this.handleClick}
-          size={'2em'}
-          top={'8%'}
-          left={'75%'}
-        />
-        <Medication
-          onClick={this.handleClick}
-          size={'1.7em'}
-          top={'10%'}
-          left={'20%'}
-        />
+        ))}
         <LandMass src={planet} />
         {this.state.showCard &&
           <MedicationCard onClick={this.handleClick}>
