@@ -1,27 +1,42 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
+import medicine from './assets/medicine.png';
+import planet from './assets/planet-earth.svg';
 import { StyledLink } from './../../styled';
 import { PageContainer } from './../../styled';
 
-const LandMass = styled.div`
-  width: 100%;
-  height: 5em;
-  bottom: 0;
+const breathe = keyframes`
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
+  }
+`;
+const MedicationContainer = styled(PageContainer)`
+  overflow: hidden;
+`;
+
+const LandMass = styled.img`
+  bottom: -30%;
+  left: 0;
   position: absolute;
-  background-color:brown;
-  border-top-left-radius: 210px;
-  border-top-right-radius: 210px;
 `;
 
 const Medication = styled.div`
   border-radius: 50%;
   position: absolute;
-  width: 3%;
-  height: 3%;
+  width: ${props => props.size};
+  height: ${props => props.size};
   background-color: yellow;
   top: ${props => props.top};
   left: ${props => props.left};
+  box-shadow: 0 0 100px #f1da36, 0 0 60px #f2ad00, 0 0 10px #c96800, 0 0 120px #feff8f;
+  animation: ${breathe} 10s ease infinite;
 `;
 
 const MedicationCard = styled.figure`
@@ -36,16 +51,19 @@ const MedicationCard = styled.figure`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 `;
 
 const Summary = styled.figcaption`
-  border: 1px solid black;
   height: 50%;
+  padding: 0.2em;
 `;
 
 const MedicationIcon = styled.img`
   border: 0;
   height: 50%;
+  width: 50%;
+  object-fit: cover;
 `;
 
 class Medications extends Component {
@@ -56,23 +74,42 @@ class Medications extends Component {
     this.setState({ showCard: !this.state.showCard });
   };
   render() {
-    console.log(this.props.match.params.condition);
     return (
-      <PageContainer>
+      <MedicationContainer>
         <StyledLink to="/medication/fluoxetine">
           {this.props.match.params.condition}
         </StyledLink>
-        <Medication onClick={this.handleClick} top={'200px'} left={'200px'} />
-        <Medication onClick={this.handleClick} top={'300px'} left={'100px'} />
-        <Medication onClick={this.handleClick} top={'250px'} left={'350px'} />
-        <Medication onClick={this.handleClick} top={'150px'} left={'300px'} />
-        <LandMass />
+        <Medication
+          onClick={this.handleClick}
+          size={'2.2em'}
+          top={'70%'}
+          left={'15%'}
+        />
+        <Medication
+          onClick={this.handleClick}
+          size={'1.5em'}
+          top={'50%'}
+          left={'55%'}
+        />
+        <Medication
+          onClick={this.handleClick}
+          size={'2em'}
+          top={'8%'}
+          left={'75%'}
+        />
+        <Medication
+          onClick={this.handleClick}
+          size={'1.7em'}
+          top={'10%'}
+          left={'20%'}
+        />
+        <LandMass src={planet} />
         {this.state.showCard &&
-          <MedicationCard>
-            <MedicationIcon />
+          <MedicationCard onClick={this.handleClick}>
+            <MedicationIcon src={medicine} />
             <Summary>Stuff and Things</Summary>
           </MedicationCard>}
-      </PageContainer>
+      </MedicationContainer>
     );
   }
 }
