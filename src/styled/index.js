@@ -12,7 +12,7 @@ export const PageContainer = styled.main`
   height: 100%;
   background-color: #052136;
   margin: 0 auto;
-  position: relative;
+  position: absolute;
 
   @media (min-width: 30em) {
     height: 80%;
