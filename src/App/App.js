@@ -18,8 +18,8 @@ class App extends Component {
           <AppWrapper>
             <Route exact path="/" component={Welcome} />
             <Route path="/conditions" component={Conditions} />
-            <Route path="/medications" component={Medications} />
-            <Route path="/medication" component={MedicationInfo} />
+            <Route path="/medications/:condition" component={Medications} />
+            <Route path="/medication/:medication" component={MedicationInfo} />
           </AppWrapper>
         </ThemeProvider>
       </Router>

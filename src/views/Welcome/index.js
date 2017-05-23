@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { StyledLink } from './../../styled';
+import { PageContainer } from './../../styled';
 
 const Logo = styled.h1`
   font-size: 2rem;
@@ -25,7 +26,7 @@ const Start = styled(StyledLink)`
 class Welcome extends Component {
   render() {
     return (
-      <div>
+      <PageContainer>
         <Logo>
           Med Space
         </Logo>
@@ -35,7 +36,7 @@ class Welcome extends Component {
         <Start to="/conditions">
           Start
         </Start>
-      </div>
+      </PageContainer>
     );
   }
 }
