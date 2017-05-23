@@ -39,8 +39,6 @@ class App extends Component {
                       transitionName="slide"
                       transitionEnterTimeout={500}
                       transitionLeaveTimeout={500}
-                      transitionAppearTimeout={500}
-                      transitionAppear={true}
                     >
                       <Route
                         exact
