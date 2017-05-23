@@ -26,4 +26,30 @@ injectGlobal`
   ul {
     list-style-type: none;
   }
+
+  .slide-enter {
+    z-index: 1;
+    bottom: -110vh;
+  }
+
+  .slide-enter.slide-enter-active {
+    bottom: 0;
+    transition: all 500ms ease-in;
+  }
+    .slide-leave {
+    bottom: 0;
+  }
+
+    .slide-leave.slide-leave-active {
+    bottom: 110vh;
+    transition: all 500ms ease-in;
+  }
+    .slide-appear {
+    bottom: -110vh;
+  }
+
+    .slide-appear.slide-appear-active {
+    bottom: 0;
+    transition: all .5s ease-in;
+  }
 `;
