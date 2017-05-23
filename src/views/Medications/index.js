@@ -4,6 +4,7 @@ import uuid from 'uuid';
 
 import medicine from './assets/medicine.png';
 import planet from './assets/planet-earth.svg';
+import closeButton from './assets/closebutton.png';
 import { StyledLink } from './../../styled';
 import { PageContainer } from './../../styled';
 import data from './../../database';
@@ -19,8 +20,38 @@ const breathe = keyframes`
     transform: scale(1);
   }
 `;
+const shake = keyframes`
+  0% {
+    transform: translateX(0);
+  }
+
+  20% {
+    transform: translateX(-10px);
+  }
+
+  40% {
+    transform: translateX(10px);
+  }
+
+  60% {
+    transform: translateX(-10px);
+  }
+
+  80% {
+    transform: translateX(10px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+`;
+
 const MedicationContainer = styled(PageContainer)`
   overflow: hidden;
+`;
+
+const MedLink = styled(StyledLink)`
+  animation: ${shake} 0.5s ease-in-out infinite;
 `;
 
 const LandMass = styled.img`
@@ -77,6 +108,16 @@ const StarContainer = styled.div`
 const StarCaption = styled.article`
   margin: 0.3em;
 `;
+
+const CloseButton = styled.img`
+  width: 1.5rem;
+  height: 1.5rem;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 3px;
+`;
+
 class Medications extends Component {
   state = {
     showCard: false,
@@ -109,9 +150,12 @@ class Medications extends Component {
       },
     ],
   };
-  handleClick = (evt, drug) =>
-    this.setState({ showCard: !this.state.showCard, drug: evt.target.id });
-
+  handleClick = (evt, drug) => {
+    this.setState({
+      showCard: !evt.target.id ? false : true,
+      drug: evt.target.id,
+    });
+  };
   render() {
     const med = this.props.match.params.condition;
     const dimensions = this.state.dimensions;
@@ -133,14 +177,13 @@ class Medications extends Component {
         ))}
         <LandMass src={planet} />
         {this.state.showCard &&
-          <MedicationCard onClick={this.handleClick}>
+          <MedicationCard>
             <MedicationIcon src={medicine} />
             <Summary>
-              <h3>
-                <StyledLink to={`/medication/${this.state.drug}`}>
-                  {this.state.drug}
-                </StyledLink>
-              </h3>
+              <CloseButton src={closeButton} onClick={this.handleClick} />
+              <MedLink to={`/medication/${this.state.drug}`}>
+                {this.state.drug}
+              </MedLink>
             </Summary>
           </MedicationCard>}
       </MedicationContainer>
