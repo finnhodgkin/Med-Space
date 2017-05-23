@@ -37,8 +37,8 @@ class App extends Component {
                   <RouteContainer>
                     <Transition
                       transitionName="slide"
-                      transitionEnterTimeout={500}
-                      transitionLeaveTimeout={500}
+                      transitionEnterTimeout={800}
+                      transitionLeaveTimeout={800}
                     >
                       <Route
                         exact
