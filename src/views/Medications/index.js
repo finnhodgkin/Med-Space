@@ -24,15 +24,28 @@ const Medication = styled.div`
   left: ${props => props.left};
 `;
 
-const MedicationCard = styled.div`
-  width: 25%;
+const MedicationCard = styled.figure`
+  width: 40%;
   height: 30%;
   background-color: white;
   box-shadow: 1px 1px 0 grey,
-  1px 1.5px 0 grey;
+  1.5px 1.5px 0 grey;
   position: absolute;
-  top: 40%;
-  left: 40%;
+  top: 30%;
+  left: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`;
+
+const Summary = styled.figcaption`
+  border: 1px solid black;
+  height: 50%;
+`;
+
+const MedicationIcon = styled.img`
+  border: 0;
+  height: 50%;
 `;
 
 class Medications extends Component {
@@ -54,7 +67,11 @@ class Medications extends Component {
         <Medication onClick={this.handleClick} top={'250px'} left={'350px'} />
         <Medication onClick={this.handleClick} top={'150px'} left={'300px'} />
         <LandMass />
-        {this.state.showCard && <MedicationCard />}
+        {this.state.showCard &&
+          <MedicationCard>
+            <MedicationIcon />
+            <Summary>Stuff and Things</Summary>
+          </MedicationCard>}
       </PageContainer>
     );
   }
