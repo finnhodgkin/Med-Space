@@ -20,7 +20,7 @@ injectGlobal`
   body {
    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
    height: 100%;
-   background-color: skyblue;
+   background-color: #052136;
   }
 
   ul {
