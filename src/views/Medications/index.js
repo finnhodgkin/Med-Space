@@ -95,7 +95,7 @@ class Medications extends Component {
       {
         size: '2em',
         top: '8%',
-        left: '75%',
+        left: '70%',
       },
       {
         size: '1.7em',
@@ -135,7 +135,13 @@ class Medications extends Component {
         {this.state.showCard &&
           <MedicationCard onClick={this.handleClick}>
             <MedicationIcon src={medicine} />
-            <Summary><h3><StyledLink to={`/medication/${this.state.drug}`}>{this.state.drug}</StyledLink></h3></Summary>
+            <Summary>
+              <h3>
+                <StyledLink to={`/medication/${this.state.drug}`}>
+                  {this.state.drug}
+                </StyledLink>
+              </h3>
+            </Summary>
           </MedicationCard>}
       </MedicationContainer>
     );
