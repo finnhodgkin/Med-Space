@@ -34,7 +34,7 @@ injectGlobal`
 
   .slide-enter.slide-enter-active {
     bottom: 0;
-    transition: all 500ms ease-in;
+    transition: all .8s cubic-bezier(0.25, 0.1, 0.49, 0.96);
   }
     .slide-leave {
     bottom: 0;
@@ -42,7 +42,7 @@ injectGlobal`
 
     .slide-leave.slide-leave-active {
     bottom: 110vh;
-    transition: all 500ms ease-in;
+    transition: all .8s cubic-bezier(0.25, 0.1, 0.45, 1.29);
   }
     .slide-appear {
     bottom: -110vh;
@@ -50,6 +50,6 @@ injectGlobal`
 
     .slide-appear.slide-appear-active {
     bottom: 0;
-    transition: all .5s ease-in;
+    transition: all .5s cubic-bezier(0.25, 0.1, 0.79, 1.61);
   }
 `;
