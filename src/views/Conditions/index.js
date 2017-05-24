@@ -153,7 +153,7 @@ const Label = styled.h2`
       ` : props.Depression ? `
         animation-duration: 1.6s;
         animation-name: ${DepressionIn};
-        margin-left: -18%;
+        margin-left: -38%;
       ` : props.ADHD ? `
         animation-duration: 1.6s;
         animation-timing-function: cubic-bezier(0.25, 0.1, 0.49, 0.96);
@@ -162,7 +162,7 @@ const Label = styled.h2`
         animation-duration: 1.8s;
         animation-timing-function: cubic-bezier(0.25, 0.1, 0.34, 0.97);
         animation-name: ${PsychosisIn};
-        margin-left: -40%;
+        margin-left: -56%;
       ` : props.Anxiety ? `
         animation-duration: 1.6s;
         animation-name: ${AnxietyIn};
