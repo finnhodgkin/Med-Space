@@ -191,7 +191,7 @@ class Medications extends Component {
                 onClick={e => this.handleClick(e, null)}
               />
               <Summary>
-                <MedLink to={`/medication/${this.state.drug}`}>
+                <MedLink to={`/medication/${this.state.drug.name}`}>
                   <h2>{this.state.drug.name}</h2>
                 </MedLink>
                 <p>{this.state.drug.use}</p>
