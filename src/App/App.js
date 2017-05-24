@@ -11,7 +11,7 @@ import Welcome from './../views/Welcome';
 import Medications from './../views/Medications';
 import Conditions from './../views/Conditions';
 import MedicationInfo from './../views/MedicationInfo';
-
+import BackButton from './BackButton';
 
 const RouteContainer = styled.div`
   width: 100%;
@@ -25,6 +25,7 @@ class App extends Component {
       <Router>
         <ThemeProvider theme={theme}>
           <AppWrapper>
+            <BackButton />
             <Route
               render={({ location }) => {
                 return (
