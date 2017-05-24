@@ -168,11 +168,11 @@ class Medications extends Component {
             key={uuid()}
           >
             <Medication
-              id={drug}
+              id={drug.name}
               onClick={this.handleClick}
               size={dimensions[i].size}
             />
-            <StarCaption>{drug}</StarCaption>
+            <StarCaption>{drug.name}</StarCaption>
           </StarContainer>
         ))}
         <LandMass src={planet} />
