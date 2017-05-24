@@ -40,6 +40,7 @@ class Medications extends Component {
   state = {
     showCard: false,
     drug: '',
+    currentDrug: 0,
     dimensions: [
       {
         size: '2.2em',
@@ -54,7 +55,7 @@ class Medications extends Component {
       {
         size: '2em',
         top: '8%',
-        left: '70%',
+        left: '30%',
       },
       {
         size: '1.7em',
@@ -74,6 +75,13 @@ class Medications extends Component {
       drug,
     });
   };
+  showNext = direction => {
+    const med = this.props.match.params.condition;
+    this.setState({
+      drug: data[med].drugs[this.state.currentDrug + direction],
+    });
+    this.state.currentDrug <= 0 ? this.setState({ currentDrug: 0 }) : null;
+  };
   render() {
     const med = this.props.match.params.condition;
     const dimensions = this.state.dimensions;
@@ -92,7 +100,9 @@ class Medications extends Component {
             />
             <StarCaption> {drug.name} </StarCaption>
           </StarContainer>
-        ))} <LandMass src={currentPlanet[med]} /> <Transition
+        ))}
+        <LandMass src={currentPlanet[med]} />
+        <Transition
           transitionName="zoom"
           transitionEnterTimeout={500}
           transitionLeaveTimeout={500}
@@ -103,8 +113,16 @@ class Medications extends Component {
                 src={closeButton}
                 onClick={e => this.handleClick(e, null)}
               />
-              <Chevron src={ChevronRight} right={'85%'} />
-              <Chevron src={ChevronLeft} left={'0%'} />
+              <Chevron
+                src={ChevronRight}
+                right={'85%'}
+                onClick={() => this.showNext(1)}
+              />
+              <Chevron
+                src={ChevronLeft}
+                left={'0%'}
+                onClick={() => this.showNext(-1)}
+              />
               <Summary>
                 <MedicationIcon src={medicine} /> <MedLink
                   to={`/medication/${this.state.drug.name}`}
