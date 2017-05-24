@@ -48,6 +48,12 @@ class App extends Component {
                         path="/conditions"
                         component={Conditions}
                       />
+                    </Transition>
+                    <Transition
+                      transitionName="conditions"
+                      transitionEnterTimeout={800}
+                      transitionLeaveTimeout={500}
+                    >
                       <Route
                         location={location}
                         key={uuid()}
