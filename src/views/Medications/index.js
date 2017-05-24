@@ -1,124 +1,40 @@
 import React, { Component } from 'react';
-import styled, { keyframes } from 'styled-components';
 import uuid from 'uuid';
 
+import ADHD from './../Conditions/assets/planet4.svg';
+import OCD from './../Conditions/assets/planet1.svg';
+import anxiety from './../Conditions/assets/planet2.svg';
+import depression from './../Conditions/assets/planet3.svg';
+import psychosis from './../Conditions/assets/planet5.svg';
 import medicine from './assets/medicine.png';
-import planet from './assets/planet-earth.svg';
-import closeButton from './assets/closebutton.png';
-import { StyledLink, PageContainer } from './../../styled';
+import closeButton from './assets/closeButton.svg';
+import ChevronLeft from './assets/chevronLeft.svg';
+import ChevronRight from './assets/chevronRight.svg';
 import { Transition } from './../../styled/app';
+import {
+  StarContainer,
+  StarCaption,
+  CloseButton,
+  Chevron,
+  MedicationIcon,
+  Summary,
+  Medication,
+  MedicationCard,
+  MedicationContainer,
+  MedLink,
+  MedTitle,
+  LandMass,
+} from './medicationStyles';
+
 import data from './../../database';
 
-const breathe = keyframes`
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.3);
-  }
-  100% {
-    transform: scale(1);
-  }
-`;
-const shake = keyframes`
-  0% {
-    transform: translateX(0);
-  }
-
-  20% {
-    transform: translateX(-10px);
-  }
-
-  40% {
-    transform: translateX(10px);
-  }
-
-  60% {
-    transform: translateX(-10px);
-  }
-
-  80% {
-    transform: translateX(10px);
-  }
-
-  100% {
-    transform: translateX(0);
-  }
-`;
-
-const MedicationContainer = styled(PageContainer)`
-  overflow: hidden;
-`;
-
-const MedLink = styled(StyledLink)`
-  animation: ${shake} 0.5s ease-in-out infinite;
-`;
-
-const LandMass = styled.img`
-  bottom: -30%;
-  left: 0;
-  position: absolute;
-`;
-
-const Medication = styled.div`
-  border-radius: 50%;
-  width: ${props => props.size};
-  height: ${props => props.size};
-  background-color: yellow;
-  box-shadow: 0 0 100px #f1da36, 0 0 60px #f2ad00, 0 0 10px #c96800, 0 0 120px #feff8f;
-  animation: ${breathe} 10s ease infinite;
-`;
-
-const MedicationCard = styled.figure`
-  width: 80%;
-  height: 70%;
-  background-color: white;
-  box-shadow: 1px 1px 0 grey,
-  1.5px 1.5px 0 grey;
-  position: absolute;
-  top: 10%;
-  left: 10%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-`;
-
-const Summary = styled.figcaption`
-  height: 50%;
-  padding: 0.2em;
-`;
-
-const MedicationIcon = styled.img`
-  border: 0;
-  margin-top: 1em;
-  height: 20%;
-  width: 30%;
-  object-fit: cover;
-`;
-
-const StarContainer = styled.div`
-  position: absolute;
-  top: ${props => props.top};
-  left: ${props => props.left};
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-`;
-const StarCaption = styled.article`
-  margin: 0.3em;
-  text-align: center;
-`;
-
-const CloseButton = styled.img`
-  width: 1.5rem;
-  height: 1.5rem;
-  object-fit: cover;
-  position: absolute;
-  top: 5px;
-  right: 5px;
-`;
+const currentPlanet = {
+  ADHD,
+  OCD,
+  anxiety,
+  depression,
+  psychosis,
+};
 
 class Medications extends Component {
   state = {
@@ -174,27 +90,27 @@ class Medications extends Component {
               onClick={e => this.handleClick(e, drug)}
               size={dimensions[i].size}
             />
-            <StarCaption>{drug.name}</StarCaption>
+            <StarCaption> {drug.name} </StarCaption>
           </StarContainer>
-        ))}
-        <LandMass src={planet} />
-        <Transition
+        ))} <LandMass src={currentPlanet[med]} /> <Transition
           transitionName="zoom"
           transitionEnterTimeout={500}
           transitionLeaveTimeout={500}
         >
           {this.state.showCard &&
             <MedicationCard key={uuid()}>
-              <MedicationIcon src={medicine} />
               <CloseButton
                 src={closeButton}
                 onClick={e => this.handleClick(e, null)}
               />
+              <Chevron src={ChevronRight} right={'85%'} />
+              <Chevron src={ChevronLeft} left={'0%'} />
               <Summary>
-                <MedLink to={`/medication/${this.state.drug.name}`}>
-                  <h2>{this.state.drug.name}</h2>
-                </MedLink>
-                <p>{this.state.drug.use}</p>
+                <MedicationIcon src={medicine} /> <MedLink
+                  to={`/medication/${this.state.drug.name}`}
+                >
+                  <MedTitle> {this.state.drug.name} </MedTitle>
+                </MedLink> <p> {this.state.drug.use} </p>
               </Summary>
             </MedicationCard>}
         </Transition>
