@@ -88,12 +88,12 @@ const Psychosis = styled(Planet)`
 `;
 
 const OCDLink = styled(StyledLink)`
-position: absolute;
-top: 60%;
-left: 10%;
-animation-duration: 1.8s;
-animation-timing-function: cubic-bezier(0.25, 0.1, 0.34, 0.97);
-animation-name: ${OCDIn};
+  position: absolute;
+  top: 60%;
+  left: 10%;
+  animation-duration: 1.8s;
+  animation-timing-function: cubic-bezier(0.25, 0.1, 0.34, 0.97);
+  animation-name: ${OCDIn};
 `;
 
 const AnxietyLink = styled(StyledLink)`
@@ -105,12 +105,12 @@ const AnxietyLink = styled(StyledLink)`
 `;
 
 const ADHDLink = styled(StyledLink)`
-position: absolute;
-top: 39%;
-left: 40%;
-animation-duration: 1.6s;
-animation-timing-function: cubic-bezier(0.25, 0.1, 0.49, 0.96);
-animation-name: ${ADHDIn};
+  position: absolute;
+  top: 39%;
+  left: 40%;
+  animation-duration: 1.6s;
+  animation-timing-function: cubic-bezier(0.25, 0.1, 0.49, 0.96);
+  animation-name: ${ADHDIn};
 `;
 
 const DepressionLink = styled(StyledLink)`
@@ -146,15 +146,15 @@ class Conditions extends Component {
           <OCD />
           <Label>OCD</Label>
         </OCDLink>
-        <ADHDLink to="/medications/OCD">
+        <ADHDLink to="/medications/ADHD">
           <ADHD />
           <Label>ADHD</Label>
         </ADHDLink>
-        <PsychosisLink to="/medications/OCD">
+        <PsychosisLink to="/medications/psychosis">
           <Psychosis />
           <Label>Psychosis</Label>
         </PsychosisLink>
-        <AnxietyLink to="/medications/OCD">
+        <AnxietyLink to="/medications/anxiety">
           <Anxiety />
           <Label>Anxiety</Label>
         </AnxietyLink>
