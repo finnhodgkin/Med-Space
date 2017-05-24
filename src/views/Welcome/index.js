@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import { StyledLink } from './../../styled';
 import { PageContainer } from './../../styled';
-import astronaut from './assets/astronaut.png';
+import logo from './assets/space-meds.svg';
 
 const WelcomeContainer = styled(PageContainer)`
   display: flex;
@@ -10,44 +10,42 @@ const WelcomeContainer = styled(PageContainer)`
   align-items: center;
 `;
 
-const Logo = styled.h1`
-  font-size: 2rem;
-  height: 10rem;
-  box-sizing: border-box;
-`;
-
 const WelcomeMessage = styled.section`
-  background-color: rgba(255,255,255,0.2);
-  padding: .5rem;
+  ${/* background-color: white; */ ''}
+  padding: 1rem;
   max-width: 20rem;
   box-sizing: border-box;
   margin: 1em;
+  margin-top: 1.5em;
+  color: #fff;
+  border-radius: .2em;
+  text-align: center;
 `;
 
 const Start = styled(StyledLink)`
-  margin: 1em;
+  margin: .75em;
   background-color: white;
   padding: .5rem;
-  max-width: 5rem;
-  box-sizing: border-box;
+  padding-right: 2em;
+  padding-left: 2em;
+  border-radius: .2em;
+  color: #052136;
+  text-align: center;
 `;
 
 const Avatar = styled.img`
-  width: 7em;
-  height: 7em;
   object-fit: cover;
+  margin-top: 10%;
+  width: 70%;
 `;
 
 class Welcome extends Component {
   render() {
     return (
       <WelcomeContainer>
-        <Logo>
-          Med Space
-        </Logo>
-        <Avatar src={astronaut} />
+        <Avatar src={logo} />
         <WelcomeMessage>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          Welcome to MedSpace, where you can explore the most frequently prescribed medication for common mental health conditions.
         </WelcomeMessage>
         <Start to="/conditions">
           Start
