@@ -13,7 +13,8 @@ const MedicationInfoWrapper = styled.div`
 `;
 
 const PageTitle = styled.h1`
-  color: #052136;
+  ${/* color: #052136; */ ''}
+  color: #fff;
   font-weight: 700;
   text-align: center;
   text-transform: uppercase;
@@ -29,7 +30,7 @@ const InfoItem = styled.li`
   margin-bottom: 2rem;
   padding: 1rem;
   border-radius: 3px;
-  background-color: #fafafa;
+  ${/* background-color: #fafafa; */ ''}
 `;
 
 const SectionIcon = styled.img`
@@ -41,12 +42,12 @@ const SectionIcon = styled.img`
 const SectionTitle = styled.h2`
   margin-bottom: 1rem;
   text-align: center;
-  color: #575757;
+  color: #fff;
   font-weight: 700;
 `;
 
 const Description = styled.div`
-  color: #898989;
+  color: #f1f1f1;
   padding: 0.5rem;
 `;
 
@@ -84,12 +85,11 @@ class MedicationInfo extends Component {
                     </SectionTitle>
                     <Description>
                       {detail === 'side-effects'
-                          ? this.renderSideEffects(drug[detail])
-                          : drug[detail]}
-                        </Description>
-                      </InfoItem>
-                )
-                );
+                        ? this.renderSideEffects(drug[detail])
+                        : drug[detail]}
+                    </Description>
+                  </InfoItem>
+                ));
               }
               return null;
             })}
