@@ -40,7 +40,7 @@ export const shake = keyframes`
 
 export const Chevron = styled.img`
   position: absolute;
-  top: 50%;
+  top: 15%;
   left: ${props => (props.right ? props.right : props.left)};
   width: 3em;
   height: 3em;
