@@ -141,7 +141,33 @@ const PsychosisLink = styled(StyledLink)`
 `;
 
 const Label = styled.h2`
-  color: white;
+  color: #90cdff;
+  margin-top: .2em;
+  font-size: 1.3em;
+  text-align: center;
+  ${props => {
+    return props.OCD ? `
+        animation-duration: 1.8s;
+        animation-timing-function: cubic-bezier(0.25, 0.1, 0.34, 0.97);
+        animation-name: ${OCDIn};
+      ` : props.Depression ? `
+        animation-duration: 1.6s;
+        animation-name: ${DepressionIn};
+        margin-left: -18%;
+      ` : props.ADHD ? `
+        animation-duration: 1.6s;
+        animation-timing-function: cubic-bezier(0.25, 0.1, 0.49, 0.96);
+        animation-name: ${ADHDIn};
+      ` : props.Psychosis ? `
+        animation-duration: 1.8s;
+        animation-timing-function: cubic-bezier(0.25, 0.1, 0.34, 0.97);
+        animation-name: ${PsychosisIn};
+        margin-left: -40%;
+      ` : props.Anxiety ? `
+        animation-duration: 1.6s;
+        animation-name: ${AnxietyIn};
+      ` : ``;
+  }}
 `;
 
 class Conditions extends Component {
@@ -150,23 +176,23 @@ class Conditions extends Component {
       <PageContainer>
         <DepressionLink to="/medications/depression">
           <Depression />
-          <Label>Depression</Label>
+          <Label Depression>Depression</Label>
         </DepressionLink>
         <OCDLink to="/medications/OCD">
           <OCD />
-          <Label>OCD</Label>
+          <Label OCD>OCD</Label>
         </OCDLink>
         <ADHDLink to="/medications/ADHD">
           <ADHD />
-          <Label>ADHD</Label>
+          <Label ADHD>ADHD</Label>
         </ADHDLink>
         <PsychosisLink to="/medications/psychosis">
           <Psychosis />
-          <Label>Psychosis</Label>
+          <Label Psychosis>Psychosis</Label>
         </PsychosisLink>
         <AnxietyLink to="/medications/anxiety">
           <Anxiety />
-          <Label>Anxiety</Label>
+          <Label Anxiety>Anxiety</Label>
         </AnxietyLink>
       </PageContainer>
     );
