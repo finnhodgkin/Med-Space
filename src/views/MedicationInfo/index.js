@@ -79,14 +79,17 @@ class MedicationInfo extends Component {
                 return Object.keys(drug).map(detail => (
                   <InfoItem key={uuid()}>
                     <SectionIcon src={astronaut} />
-                    <SectionTitle>{this.capitalizeFirst(detail)}</SectionTitle>
+                    <SectionTitle>
+                      {this.capitalizeFirst(detail)}
+                    </SectionTitle>
                     <Description>
                       {detail === 'side-effects'
-                        ? this.renderSideEffects(drug[detail])
-                        : drug[detail]}
-                    </Description>
-                  </InfoItem>
-                ));
+                          ? this.renderSideEffects(drug[detail])
+                          : drug[detail]}
+                        </Description>
+                      </InfoItem>
+                )
+                );
               }
               return null;
             })}
