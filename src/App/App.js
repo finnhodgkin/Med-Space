@@ -12,7 +12,6 @@ import Medications from './../views/Medications';
 import Conditions from './../views/Conditions';
 import MedicationInfo from './../views/MedicationInfo';
 
-
 const RouteContainer = styled.div`
   width: 100%;
   height: 100%;
@@ -47,6 +46,12 @@ class App extends Component {
                         path="/conditions"
                         component={Conditions}
                       />
+                    </Transition>
+                    <Transition
+                      transitionName="conditions"
+                      transitionEnterTimeout={800}
+                      transitionLeaveTimeout={500}
+                    >
                       <Route
                         location={location}
                         key={uuid()}
