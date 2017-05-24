@@ -4,7 +4,7 @@ import { withRouter } from 'react-router';
 import backIcon from './assets/backIcon.svg';
 
 const BackButtonStyled = styled.img`
-  position: absolute;
+  position: fixed;
   top: 2%;
   left: 2%;
   width: 1rem;
