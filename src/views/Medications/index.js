@@ -95,7 +95,7 @@ class Medications extends Component {
         ))} <LandMass src={currentPlanet[med]} /> <Transition
           transitionName="zoom"
           transitionEnterTimeout={500}
-          transitionLeaveTimeout={500}
+          transitionLeaveTimeout={1}
         >
           {this.state.showCard &&
             <MedicationCard key={uuid()}>
