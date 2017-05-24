@@ -5,8 +5,8 @@ import uuid from 'uuid';
 import medicine from './assets/medicine.png';
 import planet from './assets/planet-earth.svg';
 import closeButton from './assets/closebutton.png';
-import { StyledLink } from './../../styled';
-import { PageContainer } from './../../styled';
+import { StyledLink, PageContainer } from './../../styled';
+import { Transition } from './../../styled/app';
 import data from './../../database';
 
 const breathe = keyframes`
@@ -70,17 +70,17 @@ const Medication = styled.div`
 `;
 
 const MedicationCard = styled.figure`
-  width: 40%;
-  height: 30%;
+  width: 80%;
+  height: 70%;
   background-color: white;
   box-shadow: 1px 1px 0 grey,
   1.5px 1.5px 0 grey;
   position: absolute;
-  top: 30%;
-  left: 30%;
+  top: 10%;
+  left: 10%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 `;
 
@@ -91,8 +91,9 @@ const Summary = styled.figcaption`
 
 const MedicationIcon = styled.img`
   border: 0;
-  height: 50%;
-  width: 50%;
+  margin-top: 1em;
+  height: 20%;
+  width: 30%;
   object-fit: cover;
 `;
 
@@ -107,6 +108,7 @@ const StarContainer = styled.div`
 `;
 const StarCaption = styled.article`
   margin: 0.3em;
+  text-align: center;
 `;
 
 const CloseButton = styled.img`
@@ -114,8 +116,8 @@ const CloseButton = styled.img`
   height: 1.5rem;
   object-fit: cover;
   position: absolute;
-  top: 0;
-  left: 3px;
+  top: 5px;
+  right: 5px;
 `;
 
 class Medications extends Component {
@@ -153,7 +155,7 @@ class Medications extends Component {
   handleClick = (evt, drug) => {
     this.setState({
       showCard: !evt.target.id ? false : true,
-      drug: evt.target.id,
+      drug,
     });
   };
   render() {
@@ -169,23 +171,33 @@ class Medications extends Component {
           >
             <Medication
               id={drug.name}
-              onClick={this.handleClick}
+              onClick={e => this.handleClick(e, drug)}
               size={dimensions[i].size}
             />
             <StarCaption>{drug.name}</StarCaption>
           </StarContainer>
         ))}
         <LandMass src={planet} />
-        {this.state.showCard &&
-          <MedicationCard>
-            <MedicationIcon src={medicine} />
-            <Summary>
-              <CloseButton src={closeButton} onClick={this.handleClick} />
-              <MedLink to={`/medication/${this.state.drug}`}>
-                {this.state.drug}
-              </MedLink>
-            </Summary>
-          </MedicationCard>}
+        <Transition
+          transitionName="zoom"
+          transitionEnterTimeout={500}
+          transitionLeaveTimeout={500}
+        >
+          {this.state.showCard &&
+            <MedicationCard key={uuid()}>
+              <MedicationIcon src={medicine} />
+              <CloseButton
+                src={closeButton}
+                onClick={e => this.handleClick(e, null)}
+              />
+              <Summary>
+                <MedLink to={`/medication/${this.state.drug}`}>
+                  <h2>{this.state.drug.name}</h2>
+                </MedLink>
+                <p>{this.state.drug.use}</p>
+              </Summary>
+            </MedicationCard>}
+        </Transition>
       </MedicationContainer>
     );
   }

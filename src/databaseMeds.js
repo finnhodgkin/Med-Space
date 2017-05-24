@@ -73,7 +73,7 @@ export default [
     ],
   },
   {
-    name: 'Amitryptaline',
+    name: 'Amitriptyline',
     pronunciation: 'Ammy-TRIP-ti-leen',
     use: 'Amitriptyline is a tricyclic antidepressant medicine. A tricyclic antidepressant medicine helps to lift your mood. They are used for other symptoms, however, including bedwetting and to help with nerve pain.',
     'side-effects': [

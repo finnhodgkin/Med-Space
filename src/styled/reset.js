@@ -50,6 +50,18 @@ injectGlobal`
 
     .slide-appear.slide-appear-active {
     bottom: 0;
-    transition: all .5s cubic-bezier(0.25, 0.1, 0.79, 1.61);
+    transition: all .5s ease;
+  }
+  .zoom-enter {
+    z-index: 1;
+    transform: scale(0);
+    opacity: 0.02;
+    transform-origin: 50% 80%;
+  }
+
+  .zoom-enter.zoom-enter-active {
+    opacity: 1;
+    transform: scale(1);
+    transition: all .5s ease;
   }
 `;
