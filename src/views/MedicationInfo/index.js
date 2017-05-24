@@ -48,13 +48,18 @@ const SectionTitle = styled.h2`
 
 const Description = styled.div`
   color: #898989;
+  padding: 0.5rem;
+`;
+
+const Effect = styled.li`
+  list-style-type: circle;
 `;
 
 class MedicationInfo extends Component {
   capitalizeFirst = word => word.charAt(0).toUpperCase() + word.slice(1);
   renderSideEffects = sideEffects => (
     <ul>
-      {sideEffects.map(effect => <li key={uuid()}>{effect}</li>)}
+      {sideEffects.map(effect => <Effect key={uuid()}>{effect}</Effect>)}
     </ul>
   );
 
