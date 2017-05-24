@@ -5,10 +5,9 @@ export default [
     use: 'An antipsychotic medicine helps to adjust the levels of dopamine and other chemicals available in your brain to help with the symptoms.',
     'side-effects': [
       'Difficulty in swallowing, or any other symptoms like swelling in the mouth, tongue, face and throat, itching, rash, that could be an allergic reaction to the medicine',
-      'Muscles going stiff or rigid with high fever, sweating, looking pale, feeling strange and fainting or losing consciousness, or very rapid or irregular heartbeat (tachycardia) - this may be a serious and life-threatening side-effect called neuroleptic malignant syndrome',
+      'Muscles going stiff or rigid with high fever, sweating, looking pale, feeling strange and fainting or losing consciousness, or very rapid or irregular heartbeat',
       'If a man gets a painful erection that lasts for a long time',
       'Skin reactions - rashes, flaking of the skin or red blisters on the skin',
-      'The whites of your eyes and skin become yellow in colour - this could be jaundice - look out for this especially in the first month of taking the medicine',
     ],
   },
   {
@@ -31,7 +30,7 @@ export default [
     ],
   },
   {
-    name: 'Methylphenidate (Concerta, Medikinet, Equasy, Ritalin)',
+    name: 'Methylphenidate (Ritalin)',
     pronunciation: 'MEE-thile-FEN-i-date',
     use: 'Methylphenidate is a Central Nervous Stimulant. You can take methylphenidate as tablets or capsules.',
     'side-effects': [
@@ -103,25 +102,24 @@ export default [
     use: 'A Selective Serotonin Re-uptake Inhibitor (SSRI) helps make more serotonin available in your brain.',
     'side-effects': [
       'thoughts of harming yourself or taking your own life.',
-      'any combination of the following symptoms - high fever, agitation, confusion, trembling, sweating, diarrhoea (loose poo), fast heartbeat or weird movements of your muscles – which could be ‘Serotonin Syndrome’',
-      'a severe skin rash that causes blistering, including your mouth and tongue. These may be signs of a condition known as Stevens Johnson Syndrome, or Toxic Epidermal Necrolysis (TEN). Your doctor will stop your treatment in these cases.',
-      'allergic reaction or allergy, which may include symptoms such as an itchy skin rash, breathing problems, wheezing, swollen eyelids, face or lips',
-      'if your skin or the whites of your eyes go yellow, which may mean liver damage (jaundice)',
+      'high fever, agitation, confusion, trembling, sweating',
+      'diarrhoea (loose poo)',
+      'fast heartbeat or weird movements of your muscles',
       'if you feel restless and are not able to sit or stand still after you start to take sertraline',
-      'if you have a fit (seizure)',
       'if you feel overexcited or very happy, as this may be a manic episode',
       'repeated movements of your face and tongue that you cannot control',
       'for men, a painful erection that lasts for a long time (priapism)',
     ],
-  },{
-          name: 'Citalopram',
-          pronunciation: 'sit-AL-o-pram',
-          use: 'Citalopram is a Selective Serotonin Re-uptake Inhibitor. It helps make more serotonin available in your brain.',
-          'side-effects': [
-            'Difficulty sleeping (insomnia) - try taking your dose first thing in the morning',
-            'Dry mouth (a dry mouth increases the risk of tooth decay, so do clean your teeth more often than usual and avoid drinking sugary drinks)',
-            'Feeling sick (nausea) or vomiting - try taking your citalopram with or just after food. This tends to wear off after a few days.',
-            'Lower sex drive, or (for men) problems with ejaculation and erection and (for women) failing to reach an orgasm - talk to your doctor or pharmcist if you get this. This can be a symptom of depression.',
-          ],
-        }
+  },
+  {
+    name: 'Citalopram',
+    pronunciation: 'sit-AL-o-pram',
+    use: 'Citalopram is a Selective Serotonin Re-uptake Inhibitor. It helps make more serotonin available in your brain.',
+    'side-effects': [
+      'Difficulty sleeping (insomnia)',
+      'Dry mouth',
+      'Feeling sick (nausea) or vomiting',
+      'Lower sex drive, or (for men) problems with ejaculation and erection and (for women) failing to reach an orgasm',
+    ],
+  },
 ];
