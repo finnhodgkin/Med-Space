@@ -134,7 +134,7 @@ export default {
           ]
         },
         {
-          name: 'Methylphenidate (Concerta, Medikinet, Equasy, Ritalin)',
+          name: 'Methylphenidate (Ritalin)',
           pronunciation: 'MEE-thile-FEN-i-date',
           use: 'Methylphenidate is a Central Nervous Stimulant. You can take methylphenidate as tablets or capsules.',
           'side-effects': [

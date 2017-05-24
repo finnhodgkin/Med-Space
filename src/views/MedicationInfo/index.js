@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import uuid from 'uuid';
 
+import data from './../../databaseMeds';
 import { StyledLink } from './../../styled';
 import { PageContainer } from './../../styled';
 import astronaut from './assets/astronaut.svg';
@@ -44,58 +46,53 @@ const SectionTitle = styled.h2`
   font-weight: 700;
 `;
 
-const Description = styled.p`
+const Description = styled.div`
   color: #898989;
+  padding: 0.5rem;
+`;
+
+const Effect = styled.li`
+  list-style-type: circle;
 `;
 
 class MedicationInfo extends Component {
+  capitalizeFirst = word => word.charAt(0).toUpperCase() + word.slice(1);
+  renderSideEffects = sideEffects => (
+    <ul>
+      {sideEffects.map(effect => <Effect key={uuid()}>{effect}</Effect>)}
+    </ul>
+  );
+
   render() {
+    const medication = this.props.match.params.medication;
     return (
       <PageContainer>
         <StyledLink to="/">
           Home
         </StyledLink>
         <MedicationInfoWrapper>
-
           <InfoList>
             <InfoItem>
               <PageTitle>
-                {this.props.match.params.medication}
+                {medication}
               </PageTitle>
             </InfoItem>
-
-            <InfoItem>
-              <SectionIcon src={astronaut} />
-              <SectionTitle>Effects</SectionTitle>
-              <Description>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-              </Description>
-            </InfoItem>
-
-            <InfoItem>
-              <SectionIcon src={astronaut} />
-              <SectionTitle>Effects</SectionTitle>
-              <Description>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-              </Description>
-            </InfoItem>
-
-            <InfoItem>
-              <SectionIcon src={astronaut} />
-              <SectionTitle>Effects</SectionTitle>
-              <Description>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-              </Description>
-            </InfoItem>
-
-            <InfoItem>
-              <SectionIcon src={astronaut} />
-              <SectionTitle>Effects</SectionTitle>
-              <Description>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-              </Description>
-            </InfoItem>
-
+            {data.map(drug => {
+              if (drug.name === medication) {
+                return Object.keys(drug).map(detail => (
+                  <InfoItem key={uuid()}>
+                    <SectionIcon src={astronaut} />
+                    <SectionTitle>{this.capitalizeFirst(detail)}</SectionTitle>
+                    <Description>
+                      {detail === 'side-effects'
+                        ? this.renderSideEffects(drug[detail])
+                        : drug[detail]}
+                    </Description>
+                  </InfoItem>
+                ));
+              }
+              return null;
+            })}
           </InfoList>
         </MedicationInfoWrapper>
       </PageContainer>
