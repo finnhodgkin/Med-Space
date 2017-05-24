@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import uuid from 'uuid';
 
 import data from './../../databaseMeds';
-import { StyledLink } from './../../styled';
 import { PageContainer } from './../../styled';
 import astronaut from './assets/astronaut.svg';
 
@@ -68,9 +67,6 @@ class MedicationInfo extends Component {
     const medication = this.props.match.params.medication;
     return (
       <PageContainer>
-        <StyledLink to="/">
-          Home
-        </StyledLink>
         <MedicationInfoWrapper>
           <InfoList>
             <InfoItem>

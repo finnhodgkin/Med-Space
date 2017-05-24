@@ -90,7 +90,7 @@ class Medications extends Component {
         <Transition
           transitionName="zoom"
           transitionEnterTimeout={500}
-          transitionLeaveTimeout={500}
+          transitionLeaveTimeout={1}
         >
           {this.state.showCard &&
             <MedCard

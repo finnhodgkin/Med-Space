@@ -11,8 +11,8 @@ import PlanetPsychosis from './assets/planet5.svg';
 
 const Planet = styled.div`
   border-radius: 50%;
-  width: 5em;
-  height: 5em;
+  width: 100%;
+  height: 100%;
   box-shadow: inset -3vw -3vw 0px 0px rgba(0,0,0,0.15);
 `;
 
@@ -36,7 +36,7 @@ const AnxietyIn = keyframes`
 
 const DepressionIn = keyframes`
   0% {
-    transform: translateY(50%);
+    transform: translateY(70%);
   }
   100% {
     transform: translateY(0%);
@@ -45,7 +45,7 @@ const DepressionIn = keyframes`
 
 const ADHDIn = keyframes`
   0% {
-    transform: translateY(120%);
+    transform: translateY(170%);
   }
   100% {
     transform: translateY(0%);
@@ -54,7 +54,7 @@ const ADHDIn = keyframes`
 
 const PsychosisIn = keyframes`
   0% {
-    transform: translateY(160%);
+    transform: translateY(500%);
   }
   100% {
     transform: translateY(0%);
@@ -64,36 +64,26 @@ const PsychosisIn = keyframes`
 const OCD = styled(Planet)`
   background-image: url(${PlanetOCD});
   background-size: 100% 100%;
-  width: 37vw;
-  height: 37vw;
 `;
 
 const Anxiety = styled(Planet)`
   background-image: url(${PlanetAnxiety});
   background-size: 100% 100%;
-  width: 32vw;
-  height: 32vw;
 `;
 
 const ADHD = styled(Planet)`
   background-image: url(${PlanetADHD});
   background-size: 100% 100%;
-  width: 25vw;
-  height: 25vw;
 `;
 
 const Depression = styled(Planet)`
   background-image: url(${PlanetDepression});
   background-size: 100% 100%;
-  width: 22vw;
-  height: 22vw;
 `;
 
 const Psychosis = styled(Planet)`
   background-image: url(${PlanetPsychosis});
   background-size: 100% 100%;
-  width: 14vw;
-  height: 14vw;
   box-shadow: inset -2.7vw -2.7vw 0px 0px rgba(0,0,0,0.15);
 `;
 
@@ -101,9 +91,12 @@ const OCDLink = styled(StyledLink)`
   position: absolute;
   top: 60%;
   left: 10%;
+  width: 8em;
+  height: 8em;
   animation-duration: 1.8s;
   animation-timing-function: cubic-bezier(0.25, 0.1, 0.34, 0.97);
   animation-name: ${OCDIn};
+  ${props => (props.label ? `margin-top: 8em;` : ``)}
 `;
 
 const AnxietyLink = styled(StyledLink)`
@@ -112,23 +105,32 @@ const AnxietyLink = styled(StyledLink)`
   left: 12%;
   animation-duration: 1.6s;
   animation-name: ${AnxietyIn};
+  width: 7em;
+  height: 7em;
+  ${props => (props.label ? `margin-top: 7em;` : ``)}
 `;
 
 const ADHDLink = styled(StyledLink)`
   position: absolute;
   top: 39%;
-  left: 40%;
+  left: 45%;
   animation-duration: 1.6s;
   animation-timing-function: cubic-bezier(0.25, 0.1, 0.49, 0.96);
   animation-name: ${ADHDIn};
+  width: 5.6em;
+  height: 5.6em;
+  ${props => (props.label ? `margin-top: 5.6em;` : ``)}
 `;
 
 const DepressionLink = styled(StyledLink)`
   position: absolute;
-  top: 13%;
-  left: 60%;
+  top: 15%;
+  left: 61%;
+  width: 5em;
+  height: 5em;
   animation-duration: 1.6s;
   animation-name: ${DepressionIn};
+  ${props => (props.label ? `margin-top: 4.8em;` : ``)}
 `;
 
 const PsychosisLink = styled(StyledLink)`
@@ -138,6 +140,9 @@ const PsychosisLink = styled(StyledLink)`
   animation-duration: 1.8s;
   animation-timing-function: cubic-bezier(0.25, 0.1, 0.34, 0.97);
   animation-name: ${PsychosisIn};
+  width: 2.5em;
+  height: 2.5em;
+  ${props => (props.label ? `margin-top: 2.5em;` : ``)}
 `;
 
 const Label = styled.h2`
@@ -153,7 +158,7 @@ const Label = styled.h2`
       ` : props.Depression ? `
         animation-duration: 1.6s;
         animation-name: ${DepressionIn};
-        margin-left: -38%;
+        margin-left: -26%;
       ` : props.ADHD ? `
         animation-duration: 1.6s;
         animation-timing-function: cubic-bezier(0.25, 0.1, 0.49, 0.96);
@@ -162,7 +167,7 @@ const Label = styled.h2`
         animation-duration: 1.8s;
         animation-timing-function: cubic-bezier(0.25, 0.1, 0.34, 0.97);
         animation-name: ${PsychosisIn};
-        margin-left: -56%;
+        margin-left: -80%;
       ` : props.Anxiety ? `
         animation-duration: 1.6s;
         animation-name: ${AnxietyIn};
@@ -176,22 +181,32 @@ class Conditions extends Component {
       <PageContainer>
         <DepressionLink to="/medications/depression">
           <Depression />
+        </DepressionLink>
+        <DepressionLink label to="/medications/depression">
           <Label Depression>Depression</Label>
         </DepressionLink>
         <OCDLink to="/medications/OCD">
           <OCD />
+        </OCDLink>
+        <OCDLink label to="/medications/OCD">
           <Label OCD>OCD</Label>
         </OCDLink>
         <ADHDLink to="/medications/ADHD">
           <ADHD />
+        </ADHDLink>
+        <ADHDLink label to="/medications/ADHD">
           <Label ADHD>ADHD</Label>
         </ADHDLink>
         <PsychosisLink to="/medications/psychosis">
           <Psychosis />
+        </PsychosisLink>
+        <PsychosisLink label to="/medications/psychosis">
           <Label Psychosis>Psychosis</Label>
         </PsychosisLink>
         <AnxietyLink to="/medications/anxiety">
           <Anxiety />
+        </AnxietyLink>
+        <AnxietyLink label to="/medications/anxiety">
           <Label Anxiety>Anxiety</Label>
         </AnxietyLink>
       </PageContainer>

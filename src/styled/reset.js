@@ -64,4 +64,24 @@ injectGlobal`
     transform: scale(1);
     transition: all .5s ease;
   }
+
+  .conditions-enter {
+    z-index: 1;
+    bottom: -110vh;
+  }
+
+  .conditions-enter.conditions-enter-active {
+    bottom: 0;
+    transition: all .8s cubic-bezier(0.25, 0.1, 0.49, 0.96);
+  }
+
+  .conditions-leave {
+    z-index: 1;
+    bottom: 0;
+  }
+
+  .conditions-leave.conditions-leave-active {
+    bottom: -110vh;
+    transition: all .5s cubic-bezier(0.25, 0.1, 0.49, 0.96);
+  }
 `;
