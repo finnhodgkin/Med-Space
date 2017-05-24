@@ -38,6 +38,14 @@ export const shake = keyframes`
   }
 `;
 
+export const Chevron = styled.img`
+  position: absolute;
+  top: 50%;
+  left: ${props => (props.right ? props.right : props.left)};
+  width: 3em;
+  height: 3em;
+`;
+
 export const MedicationContainer = styled(PageContainer)`
   overflow: hidden;
 `;

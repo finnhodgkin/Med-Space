@@ -8,11 +8,14 @@ import depression from './../Conditions/assets/planet3.svg';
 import psychosis from './../Conditions/assets/planet5.svg';
 import medicine from './assets/medicine.png';
 import closeButton from './assets/closeButton.svg';
+import ChevronLeft from './assets/chevronLeft.svg';
+import ChevronRight from './assets/chevronRight.svg';
 import { Transition } from './../../styled/app';
 import {
   StarContainer,
   StarCaption,
   CloseButton,
+  Chevron,
   MedicationIcon,
   Summary,
   Medication,
@@ -100,7 +103,8 @@ class Medications extends Component {
                 src={closeButton}
                 onClick={e => this.handleClick(e, null)}
               />
-
+              <Chevron src={ChevronRight} right={'85%'} />
+              <Chevron src={ChevronLeft} left={'0%'} />
               <Summary>
                 <MedicationIcon src={medicine} /> <MedLink
                   to={`/medication/${this.state.drug.name}`}
