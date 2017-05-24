@@ -52,4 +52,13 @@ injectGlobal`
     bottom: 0;
     transition: all .5s cubic-bezier(0.25, 0.1, 0.79, 1.61);
   }
+  .zoom-enter {
+    z-index: 1;
+    transform: scale(0);
+  }
+
+  .zoom-enter.zoom-enter-active {
+    transform: scale(1);
+    transition: all .5s cubic-bezier(0.25, 0.1, 0.49, 0.96);
+  }
 `;
