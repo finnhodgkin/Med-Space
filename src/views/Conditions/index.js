@@ -3,12 +3,17 @@ import { StyledLink } from './../../styled';
 import styled, { keyframes } from 'styled-components';
 import { PageContainer } from './../../styled';
 
+import PlanetOCD from './assets/planet1.svg';
+import PlanetAnxiety from './assets/planet2.svg';
+import PlanetDepression from './assets/planet3.svg';
+import PlanetADHD from './assets/planet4.svg';
+import PlanetPsychosis from './assets/planet5.svg';
+
 const Planet = styled.div`
   border-radius: 50%;
-  background-color: palevioletred;
   width: 5em;
   height: 5em;
-  box-shadow: inset -3vw -3vw 0px 0px rgba(0,0,0,0.45);
+  box-shadow: inset -3vw -3vw 0px 0px rgba(0,0,0,0.15);
 `;
 
 const OCDIn = keyframes`
@@ -57,34 +62,39 @@ const PsychosisIn = keyframes`
 `;
 
 const OCD = styled(Planet)`
-  background-color: orange;
+  background-image: url(${PlanetOCD});
+  background-size: 100% 100%;
   width: 37vw;
   height: 37vw;
 `;
 
 const Anxiety = styled(Planet)`
-  background-color: blue;
+  background-image: url(${PlanetAnxiety});
+  background-size: 100% 100%;
   width: 32vw;
   height: 32vw;
 `;
 
 const ADHD = styled(Planet)`
-  background-color: skyblue;
+  background-image: url(${PlanetADHD});
+  background-size: 100% 100%;
   width: 25vw;
   height: 25vw;
 `;
 
 const Depression = styled(Planet)`
-  background-color: yellow;
+  background-image: url(${PlanetDepression});
+  background-size: 100% 100%;
   width: 22vw;
   height: 22vw;
 `;
 
 const Psychosis = styled(Planet)`
-  background-color: pink;
+  background-image: url(${PlanetPsychosis});
+  background-size: 100% 100%;
   width: 14vw;
   height: 14vw;
-  box-shadow: inset -2.7vw -2.7vw 0px 0px rgba(0,0,0,0.45);
+  box-shadow: inset -2.7vw -2.7vw 0px 0px rgba(0,0,0,0.15);
 `;
 
 const OCDLink = styled(StyledLink)`
