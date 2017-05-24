@@ -178,25 +178,26 @@ class Medications extends Component {
           </StarContainer>
         ))}
         <LandMass src={planet} />
-        {this.state.showCard &&
-            <Transition
-              transitionName="zoom"
-              transitionEnterTimeout={500}
-              transitionLeaveTimeout={500}
-            >
-          <MedicationCard>
-            <MedicationIcon src={medicine} />
-            <CloseButton
-              src={closeButton}
-              onClick={e => this.handleClick(e, null)}
-            />
+        <Transition
+          transitionName="zoom"
+          transitionEnterTimeout={500}
+          transitionLeaveTimeout={500}
+        >
+          {this.state.showCard &&
+            <MedicationCard key={uuid()}>
+              <MedicationIcon src={medicine} />
+              <CloseButton
+                src={closeButton}
+                onClick={e => this.handleClick(e, null)}
+              />
               <Summary>
                 <MedLink to={`/medication/${this.state.drug}`}>
                   <h2>{this.state.drug.name}</h2>
                 </MedLink>
                 <p>{this.state.drug.use}</p>
               </Summary>
-          </MedicationCard></Transition>}
+            </MedicationCard>}
+        </Transition>
       </MedicationContainer>
     );
   }
