@@ -53,6 +53,7 @@ const Description = styled.div`
 
 const Effect = styled.li`
   list-style-type: circle;
+  margin: 0.6rem;
 `;
 
 class MedicationInfo extends Component {
