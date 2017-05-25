@@ -30,6 +30,12 @@ const PageTitle = styled.h1`
   text-transform: uppercase;
 `;
 
+const Pronunciation = styled.p`
+  color: #fff;
+  font-weight: 700;
+  text-align: center;
+`;
+
 const InfoList = styled.ul`
 `;
 
@@ -93,25 +99,32 @@ class MedicationInfo extends Component {
               <PageTitle>
                 {medication}
               </PageTitle>
+              <Pronunciation>
+                Blah blah
+              </Pronunciation>
             </InfoItem>
             {data.map(drug => {
               if (drug.name === medication) {
-                return Object.keys(drug).map(detail => (
-                  <InfoItem key={uuid()}>
-                    <SectionIcon src={icons[detail]} />
-                    <SectionTitle>
-                      {this.capitalizeFirst(detail)}
-                    </SectionTitle>
-                    <Description>
-                      {detail === 'side-effects'
-                        ? this.renderSideEffects(drug[detail])
-                        : detail === 'name'
-                            ? this.renderPronunciation(drug)
-                            : drug[detail]}
-
-                    </Description>
-                  </InfoItem>
-                ));
+                return Object.keys(drug).map(detail => {
+                  if (detail === 'name' || detail === 'pronunciation') {
+                    return;
+                  }
+                  return (
+                    <InfoItem key={uuid()}>
+                      <SectionIcon src={icons[detail]} />
+                      <SectionTitle>
+                        {this.capitalizeFirst(detail)}
+                      </SectionTitle>
+                      <Description>
+                        {detail === 'side-effects'
+                          ? this.renderSideEffects(drug[detail])
+                          : detail === 'name'
+                              ? this.renderPronunciation(drug)
+                              : drug[detail]}
+                      </Description>
+                    </InfoItem>
+                  );
+                });
               }
               return null;
             })}
