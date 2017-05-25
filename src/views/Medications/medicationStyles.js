@@ -12,6 +12,14 @@ export const breathe = keyframes`
     transform: scale(1);
   }
 `;
+export const landmass = keyframes`
+  0% {
+    transform: translateY(180%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+`;
 export const shake = keyframes`
   0% {
     transform: translateX(0);
@@ -58,11 +66,25 @@ export const MedLink = styled(StyledLink)`
   color: ${props => props.theme.space};
 `;
 
+export const SeeMore = styled(StyledLink)`
+  width: auto;
+  height: 3em;
+  border: 2px solid ${props => props.theme.space};
+  border-radius: 5px;
+  padding: .5rem;
+  padding-right: 2em;
+  padding-left: 2em;
+  color: ${props => props.theme.space};
+  margin-bottom: 0.3rem;
+`;
+
 export const LandMass = styled.img`
+  animation: ${landmass} 1.5s ease;
   width: 100%;
   bottom: -35%;
   left: 0;
   position: absolute;
+
 `;
 
 export const Medication = styled.div`
@@ -89,7 +111,7 @@ export const MedicationCard = styled.figure`
   text-align: center;
   padding: 0.5rem;
   align-items: center;
-  opacity: 0.93;
+  opacity: 0.95;
 `;
 
 export const Summary = styled.figcaption`

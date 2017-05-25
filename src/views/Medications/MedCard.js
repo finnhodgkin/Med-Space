@@ -12,6 +12,7 @@ import {
   MedicationCard,
   MedLink,
   MedTitle,
+  SeeMore,
 } from './medicationStyles';
 
 const MedCard = ({ med, showNext, drug, onClick }) => (
@@ -34,6 +35,7 @@ const MedCard = ({ med, showNext, drug, onClick }) => (
         <MedTitle> {drug.name} </MedTitle>
       </MedLink> <p> {drug.use} </p>
     </Summary>
+    <SeeMore to={`/medication/${drug.name}`}>See More</SeeMore>
   </MedicationCard>
 );
 
