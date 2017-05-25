@@ -6,7 +6,8 @@ import styled from 'styled-components';
 
 import './../styled/reset';
 import theme from './../styled/theme';
-import { Transition, AppWrapper } from './../styled/app';
+import { Transition } from './../styled/app';
+import AppWrapper from './AppWrapper';
 import Welcome from './../views/Welcome';
 import Medications from './../views/Medications';
 import Conditions from './../views/Conditions';
@@ -52,7 +53,7 @@ class App extends Component {
                     <Transition
                       transitionName="conditions"
                       transitionEnterTimeout={800}
-                      transitionLeaveTimeout={500}
+                      transitionLeaveTimeout={1}
                     >
                       <Route
                         location={location}
@@ -61,12 +62,19 @@ class App extends Component {
                         component={Medications}
                       />
                     </Transition>
-                    <Route
-                      location={location}
-                      key={uuid()}
-                      path="/medication/:medication"
-                      component={MedicationInfo}
-                    />
+
+                    <Transition
+                      transitionName="medications"
+                      transitionEnterTimeout={800}
+                      transitionLeaveTimeout={800}
+                    >
+                      <Route
+                        location={location}
+                        key={uuid()}
+                        path="/medication/:medication"
+                        component={MedicationInfo}
+                      />
+                    </Transition>
                   </RouteContainer>
                 );
               }}

@@ -81,7 +81,7 @@ injectGlobal`
   }
 
   .conditions-leave.conditions-leave-active {
-    bottom: -110vh;
+    ${/* bottom: -110vh; */ ''}
     transition: all .5s cubic-bezier(0.25, 0.1, 0.49, 0.96);
   }
 `;
