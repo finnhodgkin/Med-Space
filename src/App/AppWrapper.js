@@ -35,6 +35,7 @@ const AppWrapperStyled = styled.div`
      margin-right: auto;
      height: 44.5em;
      max-width: 25em;
+     box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.15);
    }
 `;
 
