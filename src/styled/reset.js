@@ -16,15 +16,13 @@ injectGlobal`
   body {
    font-family: Space Mono, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
    height: 100%;
-   background-color: tomoto;
   }
 
   #root {
     height: 100%;
-    background-color: #ccc;
 
     @media (min-width: 30em) {
-      ${/* padding-top: 5rem; */ ''}
+      background: linear-gradient(to top right, #ddd, #fff);
     }
   }
 
