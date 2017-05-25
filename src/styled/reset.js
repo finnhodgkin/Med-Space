@@ -6,6 +6,9 @@ injectGlobal`
     box-sizing: border-box;
     height: 100%;
   }
+  ::-webkit-scrollbar {
+    display: none;
+  }
 
   *, *:before, *:after {
     box-sizing: inherit;
