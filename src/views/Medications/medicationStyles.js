@@ -146,6 +146,8 @@ export const StarContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
+  user-select: none;
 `;
 export const StarCaption = styled.article`
   margin: 0.3em;
