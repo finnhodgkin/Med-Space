@@ -5,6 +5,16 @@ import uuid from 'uuid';
 import data from './../../databaseMeds';
 import { PageContainer } from './../../styled';
 import astronaut from './assets/astronaut.svg';
+import calendar from './assets/calendar.svg';
+import robot from './assets/robot.svg';
+import telescope from './assets/telescope.svg';
+
+const icons = {
+  name: astronaut,
+  pronunciation: telescope,
+  use: calendar,
+  'side-effects': robot,
+};
 
 const MedicationInfoWrapper = styled.div`
   padding-left: 1rem;
@@ -79,7 +89,7 @@ class MedicationInfo extends Component {
               if (drug.name === medication) {
                 return Object.keys(drug).map(detail => (
                   <InfoItem key={uuid()}>
-                    <SectionIcon src={astronaut} />
+                    <SectionIcon src={icons[detail]} />
                     <SectionTitle>
                       {this.capitalizeFirst(detail)}
                     </SectionTitle>
