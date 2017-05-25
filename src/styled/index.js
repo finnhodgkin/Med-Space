@@ -10,7 +10,6 @@ export const PageContainer = styled.main`
   width: 100%;
   max-width: 30em;
   height: 100%;
-  background-color: #052136;
   margin: 0 auto;
   position: absolute;
 

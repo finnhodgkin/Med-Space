@@ -84,7 +84,7 @@ const Depression = styled(Planet)`
 const Psychosis = styled(Planet)`
   background-image: url(${PlanetPsychosis});
   background-size: 100% 100%;
-  box-shadow: inset -2.7vw -2.7vw 0px 0px rgba(0,0,0,0.15);
+  box-shadow: inset -.5em -.5em 0px 0px rgba(0,0,0,0.15);
 `;
 
 const OCDLink = styled(StyledLink)`
