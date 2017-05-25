@@ -12,6 +12,9 @@ const BackButtonStyled = styled.img`
   cursor: pointer;
   z-index: 9999;
   opacity: 0.6;
+  @media (min-width: 30em) {
+    position: absolute;
+  }
 `;
 
 function BackButton(props) {

@@ -23,10 +23,9 @@ injectGlobal`
     height: 100%;
     background-color: #ccc;
 
-    @media (min-width: 500px) {
-      padding-top: 5rem;
+    @media (min-width: 30em) {
+      ${/* padding-top: 5rem; */ ''}
     }
-
   }
 
   ul {
