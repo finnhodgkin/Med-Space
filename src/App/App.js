@@ -65,8 +65,8 @@ class App extends Component {
 
                     <Transition
                       transitionName="medications"
-                      transitionEnterTimeout={800}
-                      transitionLeaveTimeout={800}
+                      transitionEnter={false}
+                      transitionLeave={false}
                     >
                       <Route
                         location={location}

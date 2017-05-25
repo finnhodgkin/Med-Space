@@ -8,12 +8,6 @@ export const StyledLink = styled(Link)`
 
 export const PageContainer = styled.main`
   width: 100%;
-  max-width: 30em;
   height: 100%;
-  margin: 0 auto;
   position: absolute;
-
-  @media (min-width: 30em) {
-    height: 80%;
-  }
 `;
