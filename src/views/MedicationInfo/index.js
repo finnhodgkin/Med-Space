@@ -59,6 +59,9 @@ const SectionTitle = styled.h2`
 const Description = styled.div`
   color: #f1f1f1;
   padding: 0.5rem;
+  > div {
+    text-align: center;
+  }
 `;
 
 const Effect = styled.li`
@@ -72,6 +75,12 @@ class MedicationInfo extends Component {
     <ul>
       {sideEffects.map(effect => <Effect key={uuid()}>{effect}</Effect>)}
     </ul>
+  );
+
+  renderPronunciation = drugs => (
+    <div>
+      <p>{drugs.name}</p><p>{drugs.pronunciation}</p>
+    </div>
   );
 
   render() {
@@ -96,7 +105,10 @@ class MedicationInfo extends Component {
                     <Description>
                       {detail === 'side-effects'
                         ? this.renderSideEffects(drug[detail])
-                        : drug[detail]}
+                        : detail === 'name'
+                            ? this.renderPronunciation(drug)
+                            : drug[detail]}
+
                     </Description>
                   </InfoItem>
                 ));
