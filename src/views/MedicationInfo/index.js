@@ -20,6 +20,7 @@ const MedicationInfoWrapper = styled.div`
   padding-left: 1rem;
   padding-right: 1rem;
   padding-top: 2rem;
+  background-color: #052136;
 `;
 
 const PageTitle = styled.h1`
@@ -95,18 +96,22 @@ class MedicationInfo extends Component {
       <PageContainer>
         <MedicationInfoWrapper>
           <InfoList>
-            <InfoItem>
-              <PageTitle>
-                {medication}
-              </PageTitle>
-              <Pronunciation>
-                Blah blah
-              </Pronunciation>
-            </InfoItem>
             {data.map(drug => {
               if (drug.name === medication) {
                 return Object.keys(drug).map(detail => {
-                  if (detail === 'name' || detail === 'pronunciation') {
+                  if (detail === 'name') {
+                    return (
+                      <InfoItem>
+                        <PageTitle>
+                          {drug.name}
+                        </PageTitle>
+                        <Pronunciation>
+                          {drug.pronunciation}
+                        </Pronunciation>
+                      </InfoItem>
+                    );
+                  }
+                  if (detail === 'pronunciation') {
                     return;
                   }
                   return (
