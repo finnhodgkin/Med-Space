@@ -6,13 +6,11 @@ import OCD from './../Conditions/assets/planet1.svg';
 import anxiety from './../Conditions/assets/planet2.svg';
 import depression from './../Conditions/assets/planet3.svg';
 import psychosis from './../Conditions/assets/planet5.svg';
+import astronaut from './assets/astronaut-standing.svg';
 import { Transition } from './../../styled/app';
 import MedCard from './MedCard';
 import Stars from './Stars';
-import {
-  MedicationContainer,
-  LandMass,
-} from './medicationStyles';
+import { MedicationContainer, LandMass, Astronaut } from './medicationStyles';
 
 import data from './../../database';
 
@@ -86,6 +84,7 @@ class Medications extends Component {
             i={i}
           />
         ))}
+        <Astronaut src={astronaut} />
         <LandMass src={currentPlanet[med]} />
         <Transition
           transitionName="zoom"

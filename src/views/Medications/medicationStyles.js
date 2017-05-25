@@ -27,35 +27,10 @@ export const glow = keyframes`
 
 export const landmass = keyframes`
   0% {
-    transform: translateY(180%);
+    transform: translateY(100em);
   }
   100% {
-    transform: translateY(0%);
-  }
-`;
-export const shake = keyframes`
-  0% {
-    transform: translateX(0);
-  }
-
-  20% {
-    transform: translateX(-10px);
-  }
-
-  40% {
-    transform: translateX(10px);
-  }
-
-  60% {
-    transform: translateX(-10px);
-  }
-
-  80% {
-    transform: translateX(10px);
-  }
-
-  100% {
-    transform: translateX(0);
+    transform: translateY(0em);
   }
 `;
 
@@ -109,21 +84,27 @@ export const Medication = styled.div`
 `;
 
 export const MedicationCard = styled.figure`
-  width: 80%;
-  height: 70%;
+  z-index: 3;
+  width: 90%;
+  top: 5%;
+  left: 5%;
+  height: 85%;
   color: ${props => props.theme.space};
   background-color: #F5F4FF;
   border-radius: 6px;
   position: absolute;
-  top: 10%;
-  left: 10%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   text-align: center;
   padding: 0.5rem;
   align-items: center;
-  opacity: 0.95;
+  opacity: 0.96;
+`;
+
+export const MedCardIcons = styled.div`
+  width: 100%;
+  height: 30%;
 `;
 
 export const Summary = styled.figcaption`
@@ -137,9 +118,23 @@ export const Summary = styled.figcaption`
 
 export const MedicationIcon = styled.img`
   border: 0;
-  height: 30%;
-  width: 30%;
+  height: 8rem;
+  width: 8rem;
   object-fit: cover;
+`;
+
+export const DetailsContainer = styled.div`
+  height: 50%;
+`;
+
+export const Astronaut = styled.img`
+  animation: ${landmass} 1.5s ease;
+  height: 5rem;
+  width: 5rem;
+  bottom: 15%;
+  left: 38%;
+  z-index: 1;
+  position: absolute;
 `;
 
 export const StarContainer = styled.div`
