@@ -12,6 +12,19 @@ export const breathe = keyframes`
     transform: scale(1);
   }
 `;
+export const glow = keyframes`
+  0% {
+  box-shadow: 0 0 100px #f1da36, 0 0 60px #f2ad00, 0 0 10px #c96800, 0 0 120px #feff8f;
+  }
+  50% {
+  box-shadow: 0 0 150px #f1da36, 0 0 100px #f2ad00, 0 0 50px #c96800, 0 0 200px #feff8f;
+  }
+  100% {
+  box-shadow: 0 0 100px #f1da36, 0 0 60px #f2ad00, 0 0 10px #c96800, 0 0 120px #feff8f;
+  }
+
+`;
+
 export const landmass = keyframes`
   0% {
     transform: translateY(180%);
@@ -92,8 +105,7 @@ export const Medication = styled.div`
   width: ${props => props.size};
   height: ${props => props.size};
   background-color: yellow;
-  box-shadow: 0 0 100px #f1da36, 0 0 60px #f2ad00, 0 0 10px #c96800, 0 0 120px #feff8f;
-  animation: ${breathe} 10s ease infinite;
+  animation: ${glow} 4s ease infinite;
 `;
 
 export const MedicationCard = styled.figure`
@@ -131,6 +143,7 @@ export const MedicationIcon = styled.img`
 `;
 
 export const StarContainer = styled.div`
+  color: #90cdff;
   position: absolute;
   top: ${props => props.top};
   left: ${props => props.left};
