@@ -13,7 +13,8 @@ const Planet = styled.div`
   border-radius: 50%;
   width: 100%;
   height: 100%;
-  box-shadow: inset -3vw -3vw 0px 0px rgba(0,0,0,0.15);
+  background-size: 100% 100%;
+  box-shadow: inset -.8em -.8em 0px 0px rgba(0,0,0,0.15);
 `;
 
 const OCDIn = keyframes`
@@ -63,27 +64,26 @@ const PsychosisIn = keyframes`
 
 const OCD = styled(Planet)`
   background-image: url(${PlanetOCD});
-  background-size: 100% 100%;
+  box-shadow: inset -1.2em -1.2em 0px 0px rgba(0,0,0,0.15);
 `;
 
 const Anxiety = styled(Planet)`
   background-image: url(${PlanetAnxiety});
-  background-size: 100% 100%;
+  box-shadow: inset -1em -1em 0px 0px rgba(0,0,0,0.15);
 `;
 
 const ADHD = styled(Planet)`
   background-image: url(${PlanetADHD});
-  background-size: 100% 100%;
+  box-shadow: inset -.9em -.9em 0px 0px rgba(0,0,0,0.15);
 `;
 
 const Depression = styled(Planet)`
   background-image: url(${PlanetDepression});
-  background-size: 100% 100%;
+  box-shadow: inset -.7em -.7em 0px 0px rgba(0,0,0,0.15);
 `;
 
 const Psychosis = styled(Planet)`
   background-image: url(${PlanetPsychosis});
-  background-size: 100% 100%;
   box-shadow: inset -.5em -.5em 0px 0px rgba(0,0,0,0.15);
 `;
 
