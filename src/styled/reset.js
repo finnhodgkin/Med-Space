@@ -26,7 +26,6 @@ injectGlobal`
     @media (min-width: 30em) {
       ${/* padding-top: 5rem; */ ''}
     }
-
   }
 
   ul {
