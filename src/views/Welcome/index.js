@@ -8,10 +8,10 @@ const WelcomeContainer = styled(PageContainer)`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 `;
 
 const WelcomeMessage = styled.section`
-  ${/* background-color: white; */ ''}
   padding: 1rem;
   max-width: 20rem;
   box-sizing: border-box;
@@ -35,7 +35,6 @@ const Start = styled(StyledLink)`
 
 const Avatar = styled.img`
   object-fit: cover;
-  margin-top: 10%;
   width: 70%;
 `;
 
