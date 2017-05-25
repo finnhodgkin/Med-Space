@@ -7,10 +7,6 @@ injectGlobal`
     height: 100%;
   }
 
-  #root {
-    height: 100%;
-  }
-
   *, *:before, *:after {
     box-sizing: inherit;
     margin: 0;
@@ -20,7 +16,17 @@ injectGlobal`
   body {
    font-family: Space Mono, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
    height: 100%;
-   background-color: #052136;
+   background-color: tomoto;
+  }
+
+  #root {
+    height: 100%;
+    background-color: #ccc;
+
+    @media (min-width: 500px) {
+      padding-top: 5rem;
+    }
+
   }
 
   ul {
