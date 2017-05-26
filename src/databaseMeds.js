@@ -6,7 +6,6 @@ export default [
     'side-effects': [
       'Difficulty in swallowing, or any other symptoms like swelling in the mouth, tongue, face and throat, itching, rash, that could be an allergic reaction to the medicine',
       'Muscles going stiff or rigid with high fever, sweating, looking pale, feeling strange and fainting or losing consciousness, or very rapid or irregular heartbeat',
-      'If a man gets a painful erection that lasts for a long time',
       'Skin reactions - rashes, flaking of the skin or red blisters on the skin',
     ],
   },
@@ -53,7 +52,6 @@ export default [
       'hives (small raised, itchy patches of skin)',
       'fits (seizures)',
       'psychotic symptoms including hallucinations (hearing voices or seeing things which are not there), or believing things that are not true, or being suspicious',
-      'in men, having a painful and long-lasting erection (priapism)',
     ],
   },
   {
@@ -108,7 +106,6 @@ export default [
       'if you feel restless and are not able to sit or stand still after you start to take sertraline',
       'if you feel overexcited or very happy, as this may be a manic episode',
       'repeated movements of your face and tongue that you cannot control',
-      'for men, a painful erection that lasts for a long time (priapism)',
     ],
   },
   {
@@ -119,7 +116,6 @@ export default [
       'Difficulty sleeping (insomnia)',
       'Dry mouth',
       'Feeling sick (nausea) or vomiting',
-      'Lower sex drive, or (for men) problems with ejaculation and erection and (for women) failing to reach an orgasm',
     ],
   },
 ];
