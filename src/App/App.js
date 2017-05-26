@@ -32,7 +32,7 @@ class App extends Component {
                 return (
                   <RouteContainer>
                     <Transition
-                      transitionName="slide"
+                      transitionName="welcome"
                       transitionEnterTimeout={800}
                       transitionLeaveTimeout={800}
                     >
@@ -43,6 +43,15 @@ class App extends Component {
                         location={location}
                         component={Welcome}
                       />
+                    </Transition>
+
+                    <Transition
+                      transitionName={
+                        location.pathname === '/' ? 'home' : 'slide'
+                      }
+                      transitionEnterTimeout={800}
+                      transitionLeaveTimeout={800}
+                    >
                       <Route
                         location={location}
                         key={uuid()}
