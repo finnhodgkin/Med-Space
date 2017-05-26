@@ -93,4 +93,37 @@ injectGlobal`
     ${/* bottom: -110vh; */ ''}
     transition: all .5s cubic-bezier(0.25, 0.1, 0.49, 0.96);
   }
+
+  .welcome-enter {
+    z-index: 1;
+    bottom: 110vh;
+  }
+
+  .welcome-enter.welcome-enter-active {
+    bottom: 0;
+    transition: all .8s cubic-bezier(0.25, 0.1, 0.49, 0.96);
+  }
+    .welcome-leave {
+    bottom: 0;
+  }
+    .welcome-leave.welcome-leave-active {
+    bottom: 110vh;
+    transition: all .8s cubic-bezier(0.25, 0.1, 0.45, 1.29);
+  }
+
+  .home-enter {
+    z-index: 1;
+    bottom: 110vh;
+  }
+  .home-enter.home-enter-active {
+    bottom: 0;
+    transition: all .8s cubic-bezier(0.25, 0.1, 0.49, 0.96);
+  }
+  .home-leave {
+    bottom: 0;
+  }
+  .home-leave.home-leave-active {
+    bottom: -110vh;
+    transition: all .8s cubic-bezier(0.25, 0.1, 0.45, 1.29);
+  }
 `;
