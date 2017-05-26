@@ -8,6 +8,9 @@ injectGlobal`
   }
   ::-webkit-scrollbar {
     display: none;
+    height: 0;
+    width: 0;
+    background-color: transparent;
   }
 
   *, *:before, *:after {
