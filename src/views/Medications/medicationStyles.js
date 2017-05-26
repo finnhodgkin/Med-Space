@@ -56,7 +56,6 @@ export const MedLink = styled(StyledLink)`
 
 export const SeeMore = styled(StyledLink)`
   width: auto;
-  height: 3em;
   border: 2px solid ${props => props.theme.space};
   border-radius: 5px;
   padding: .5rem;
@@ -64,6 +63,9 @@ export const SeeMore = styled(StyledLink)`
   padding-left: 2em;
   color: ${props => props.theme.space};
   margin-bottom: 0.3rem;
+  background-color: #EC9696;
+  font-size: 1.2em;
+  font-weight: 600;
 `;
 
 export const LandMass = styled.img`
