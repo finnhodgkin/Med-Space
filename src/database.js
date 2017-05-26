@@ -10,7 +10,6 @@ export default {
           'Difficulty sleeping (insomnia) - try taking your dose first thing in the morning',
           'Dry mouth (a dry mouth increases the risk of tooth decay, so do clean your teeth more often than usual and avoid drinking sugary drinks)',
           'Feeling sick (nausea) or vomiting - try taking your citalopram with or just after food. This tends to wear off after a few days.',
-          'Lower sex drive, or (for men) problems with ejaculation and erection and (for women) failing to reach an orgasm - talk to your doctor or pharmcist if you get this. This can be a symptom of depression.',
         ],
       },
       {
@@ -27,7 +26,6 @@ export default {
           'if you have a fit (seizure)',
           'if you feel overexcited or very happy, as this may be a manic episode',
           'repeated movements of your face and tongue that you cannot control',
-          'for men, a painful erection that lasts for a long time (priapism)',
         ],
       },
       {
@@ -54,7 +52,6 @@ export default {
           'Difficulty sleeping (insomnia) - try taking your dose first thing in the morning',
           'Dry mouth (a dry mouth increases the risk of tooth decay, so do clean your teeth more often than usual and avoid drinking sugary drinks)',
           'Feeling sick (nausea) or vomiting - try taking your citalopram with or just after food. This tends to wear off after a few days.',
-          'Lower sex drive, or (for men) problems with ejaculation and erection and (for women) failing to reach an orgasm - talk to your doctor or pharmcist if you get this. This can be a symptom of depression.',
         ],
       },
       {
@@ -71,7 +68,6 @@ export default {
           'if you have a fit (seizure)',
           'if you feel overexcited or very happy, as this may be a manic episode',
           'repeated movements of your face and tongue that you cannot control',
-          'for men, a painful erection that lasts for a long time (priapism)',
         ],
       },
       {
@@ -133,7 +129,6 @@ export default {
           'hives (small raised, itchy patches of skin)',
           'fits (seizures)',
           'psychotic symptoms including hallucinations (hearing voices or seeing things which are not there), or believing things that are not true, or being suspicious',
-          'in men, having a painful and long-lasting erection (priapism)',
         ],
       },
       {
@@ -158,7 +153,6 @@ export default {
         'side-effects': [
           'Difficulty in swallowing, or any other symptoms like swelling in the mouth, tongue, face and throat, itching, rash, that could be an allergic reaction to the medicine',
           'Muscles going stiff or rigid with high fever, sweating, looking pale, feeling strange and fainting or losing consciousness, or very rapid or irregular heartbeat (tachycardia) - this may be a serious and life-threatening side-effect called neuroleptic malignant syndrome',
-          'If a man gets a painful erection that lasts for a long time',
           'Skin reactions - rashes, flaking of the skin or red blisters on the skin',
           'The whites of your eyes and skin become yellow in colour - this could be jaundice - look out for this especially in the first month of taking the medicine',
         ],
@@ -194,7 +188,6 @@ export default {
         'side-effects': [
           'Difficulty in swallowing, or any other symptoms like swelling in the mouth, tongue, face and throat, itching, rash, that could be an allergic reaction to the medicine',
           'Muscles going stiff or rigid with high fever, sweating, looking pale, feeling strange and fainting or losing consciousness, or very rapid or irregular heartbeat (tachycardia) - this may be a serious and life-threatening side-effect called neuroleptic malignant syndrome',
-          'If a man gets a painful erection that lasts for a long time',
           'Skin reactions - rashes, flaking of the skin or red blisters on the skin',
           'The whites of your eyes and skin become yellow in colour - this could be jaundice - look out for this especially in the first month of taking the medicine',
         ],
